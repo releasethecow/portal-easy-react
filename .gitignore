@@ -7,6 +7,7 @@
 .vscode
 .idea
 logs/
+dist/
 node_modules/
 *.log
 public/
