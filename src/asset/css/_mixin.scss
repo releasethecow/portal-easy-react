@@ -1,0 +1,38 @@
+
+@mixin border1px {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: -100%;
+  bottom: -100%;
+  transform: scale3d(.5, .5, .5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  touch-action: none;
+  -webkit-touch-action: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  z-index: 1;
+}
+
+@mixin singleLine {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+@mixin lineClamp($n){
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: $n;
+  -webkit-line-clamp: $n;
+}
+
+$defaultColor: #323232;

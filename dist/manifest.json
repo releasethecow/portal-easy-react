@@ -1,7 +1,6 @@
 {
   "app.css": "/css/app.css",
   "app.js": "/js/chunk/app.js",
-  "common.css": "/css/common.css",
   "common.js": "/js/chunk/common.js",
   "runtime.js": "/js/runtime.js",
   "img/home.css": "/img/loading.gif",
@@ -15,7 +14,6 @@
         "/js/chunk/app.js"
       ],
       "css": [
-        "/css/common.css",
         "/css/app.css"
       ]
     }

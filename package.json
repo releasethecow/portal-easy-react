@@ -7,14 +7,12 @@
     "easywebpack",
     "react",
     "redux",
-    "react-router",
-    "antd"
+    "react-router"
   ],
   "dependencies": {
     "postcss-plugin-px2rem": "^0.8.0"
   },
   "devDependencies": {
-    "antd": "^3.9.2",
     "easywebpack-cli": "^4.0.0",
     "easywebpack-react": "^4.0.0",
     "eslint": "^4.16.0",

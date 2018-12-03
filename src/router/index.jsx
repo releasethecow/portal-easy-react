@@ -1,7 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import { Menu } from 'antd';
 
 import Home from './component/page/home';
 import About from './component/page/about';
@@ -23,17 +22,9 @@ class App extends Component {
 
   render() {
     return <BrowserRouter><div>
-      <Menu onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]} mode="horizontal">
-        <Menu.Item key="home">
-          <Link to="/app.html">Home</Link>
-        </Menu.Item>
-        <Menu.Item key="about">
-          <Link to="/about">About</Link>
-        </Menu.Item>
-        <Menu.Item key="notfound">
-          <Link to="/404">404</Link>
-        </Menu.Item>
-      </Menu>
+      <Link to="/app.html">Home</Link> | 
+      <Link to="/about">About</Link> | 
+      <Link to="/404">404</Link> | 
       <Switch>
         <Route path="/about" component={About}/>
         <Route path="/" component={Home}/>
