@@ -1,0 +1,28 @@
+{
+  "app.css": "/css/app.css",
+  "app.js": "/js/chunk/app.js",
+  "common.css": "/css/common.css",
+  "common.js": "/js/chunk/common.js",
+  "runtime.js": "/js/runtime.js",
+  "img/home.css": "/img/loading.gif",
+  "vendor.js": "/js/vendor.js",
+  "deps": {
+    "app.js": {
+      "js": [
+        "/js/vendor.js",
+        "/js/runtime.js",
+        "/js/chunk/common.js",
+        "/js/chunk/app.js"
+      ],
+      "css": [
+        "/css/common.css",
+        "/css/app.css"
+      ]
+    }
+  },
+  "info": {
+    "publicPath": "/",
+    "buildPath": "dist",
+    "mapped": true
+  }
+}

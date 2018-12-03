@@ -1,0 +1,15 @@
+*.orig
+*.swp
+*.tmp
+*.log
+.DS_Store
+.happypack
+.vscode
+.idea
+logs/
+node_modules/
+*.log
+public/
+.zip/
+package-lock.json
+config/manifest.json
