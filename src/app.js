@@ -11,7 +11,7 @@ const App = () => {
   return EASY_ENV_IS_DEV ? <AppContainer><Routes /></AppContainer> : <Routes />;
 };
 
-const Entry = () => (<div>
+const Entry = () => (<div className="root">
   <Provider store={ createStore() }>
     <App />
   </Provider>

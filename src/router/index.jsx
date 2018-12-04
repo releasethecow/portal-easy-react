@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
+import Pane from './component/widget/pane';
+import Menu from './component/widget/menu';
 import Home from './component/page/home';
 import About from './component/page/about';
 import Notfound from './component/page/notfound';
@@ -21,16 +23,21 @@ class App extends Component {
   }
 
   render() {
-    return <BrowserRouter><div>
-      <Link to="/app.html">Home</Link> | 
-      <Link to="/about">About</Link> | 
-      <Link to="/404">404</Link> | 
-      <Switch>
-        <Route path="/about" component={About}/>
-        <Route path="/" component={Home}/>
-        <Route path="/404" component={Notfound}/>
-      </Switch>
-    </div>
+    return <BrowserRouter>
+    <Pane
+      menu={
+        <Menu />
+      }
+      content={
+        <div className="content">
+        <Switch>
+          <Route path="/about" component={About}/>
+          <Route path="/" component={Home}/>
+          <Route path="/404" component={Notfound}/>
+        </Switch>
+        </div>
+      }
+    />
     </BrowserRouter>;
   }
 }

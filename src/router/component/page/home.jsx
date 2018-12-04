@@ -30,9 +30,9 @@ class Home extends Component {
                       <time className="timeago">{item.moduleName}</time>
                     </li>
                     <li className="tauthor">
-                      <a href="#" target="_blank" className="get">Sky</a>
+                      <a href="#" target="_blank" className="get">XYZ</a>
                     </li>
-                    <li><a>+收藏</a></li>
+                    <li><a>+ Mark</a></li>
                     <li>
                       <span className="timeago">{item.summary}</span>
                     </li>

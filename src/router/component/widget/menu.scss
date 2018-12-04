@@ -1,0 +1,16 @@
+.menu-ul {
+  .menu-li {
+    background-color: #cccccc;
+    padding: 5px;
+  }
+}
+.portrait {
+  .menu {
+    .menu-ul {
+      .menu-li {
+        display: inline-block;
+        width: 100px;
+      }
+    }
+  }
+}
