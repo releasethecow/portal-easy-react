@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Pane from './component/widget/pane';
 import Menu from './component/widget/menu';
@@ -12,14 +12,6 @@ import Notfound from './component/page/notfound';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { current: 'home' };
-  }
-
-  handleClick(e) {
-    console.log('click ', e, this.state);
-    this.setState({
-      current: e.key
-    });
   }
 
   render() {

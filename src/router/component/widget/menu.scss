@@ -2,6 +2,12 @@
   .menu-li {
     background-color: #cccccc;
     padding: 5px;
+    &.current {
+      background-color: #2278cc;
+      a {
+        color: #cccccc;
+      }
+    }
   }
 }
 .portrait {

@@ -18,6 +18,7 @@ class Home extends Component {
       <div className="container">
         <h1>React + Redux + React-Router</h1>
         <div className="loading"></div>
+        <div className="redux-btn-add" onClick={() => add(item)}>Add</div>
         <ul className="smart-artiles" id="articleList">
           {list.map(function(item) {
             return <li key={item.id}>
@@ -46,7 +47,6 @@ class Home extends Component {
           })}
         </ul>
       </div>
-      <div className="redux-btn-add" onClick={() => add(item)}>Add</div>
     </div>;
   }
 }
