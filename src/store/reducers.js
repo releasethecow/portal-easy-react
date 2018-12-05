@@ -1,4 +1,4 @@
-import { LIST, ADD, DEL } from './constant';
+import { LIST, ADD, DEL, REQUEST, REQUEST_STATUS } from './constant';
 
 export default function update(state, action) {
   const newState = Object.assign({}, state);
@@ -11,6 +11,11 @@ export default function update(state, action) {
     });
   } else if (action.type === LIST) {
     newState.list = action.list;
+  // } else if (action.type === REQUEST) {
+    //
+  } else if (action.type === REQUEST_STATUS) {
+    newState.foo = { ...action.data };
+    console.info('newState.foo:', newState.foo);
   }
   return newState;
 }

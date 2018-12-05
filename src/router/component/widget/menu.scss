@@ -1,0 +1,22 @@
+.menu-ul {
+  .menu-li {
+    background-color: #cccccc;
+    padding: 5px;
+    &.current {
+      background-color: #2278cc;
+      a {
+        color: #cccccc;
+      }
+    }
+  }
+}
+.portrait {
+  .menu {
+    .menu-ul {
+      .menu-li {
+        display: inline-block;
+        width: 100px;
+      }
+    }
+  }
+}

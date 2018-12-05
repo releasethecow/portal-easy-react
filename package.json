@@ -10,7 +10,16 @@
     "react-router"
   ],
   "dependencies": {
-    "postcss-plugin-px2rem": "^0.8.0"
+    "cross-fetch": "^2.2.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux-thunk": "^2.3.0",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "easywebpack-cli": "^4.0.0",
@@ -22,14 +31,7 @@
     "imagemin-webpack-plugin": "^2.0.0",
     "node-sass": "^4.10.0",
     "raw-loader": "^0.5.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-config": "^1.0.0-beta.4",
-    "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
-    "redux": "^3.7.2",
+    "postcss-plugin-px2rem": "^0.8.0",
     "sass-loader": "^7.1.0"
   },
   "engines": {

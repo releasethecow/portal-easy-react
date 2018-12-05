@@ -4,6 +4,7 @@ const cwd = __dirname;
 module.exports = {
   target: 'web',
   framework: 'react',
+  port: 7001,
   alias: {
     asset: path.join(cwd, 'src/asset'),
     component: path.join(cwd, 'src/component'),
