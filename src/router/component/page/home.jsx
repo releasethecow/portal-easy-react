@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { list, add, del, request } from '../../../store/actions';
 import './home.css';
-class Home extends Component {
 
+const Info = (props) => {
+  if (props.foo) {
+    return (<div className="info">{JSON.stringify(props.foo)}</div>)
+  } else {
+    return (<div className="loading"></div>);
+  }
+}
+class Home extends Component {
   render() {
     const props = this.props;
     const id = props.list.length + 1;
@@ -17,7 +24,7 @@ class Home extends Component {
     return <div className="redux-nav-item">
       <div className="container">
         <h1>React + Redux + React-Router</h1>
-        <div className="loading"></div>
+        <Info foo={props.foo}/>
         <div className="redux-btn-add" onClick={() => props.request({service: '//api.github.com/users/lquixada', params: {}})}>Request</div>
         <br />
         <div className="redux-btn-add" onClick={() => props.add(item)}>Add</div>
@@ -55,7 +62,8 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    list: state.list
+    list: state.list,
+    foo: state.foo,
   };
 };
 const mapDispatchToProps = dispatch => {

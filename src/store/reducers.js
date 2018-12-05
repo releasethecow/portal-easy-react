@@ -1,5 +1,5 @@
 import { LIST, ADD, DEL, REQUEST, REQUEST_DONE } from './constant';
-import { requestDone } from './actions';
+
 export default function update(state, action) {
   const newState = Object.assign({}, state);
   if (action.type === ADD) {
@@ -14,7 +14,7 @@ export default function update(state, action) {
   // } else if (action.type === REQUEST) {
     //
   } else if (action.type === REQUEST_DONE) {
-    newState.foo = action.data;
+    newState.foo = { ...action.data };
     console.info('newState.foo:', newState.foo);
   }
   return newState;

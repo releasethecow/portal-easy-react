@@ -33,7 +33,7 @@ export const request = ({ service, params }) => dispatch => {
       console.log(JSON.stringify(res));
       dispatch({
         type: REQUEST_DONE,
-        data: res.json(),
+        data: res,
       });
       return res;
     })
