@@ -2,7 +2,7 @@ export const LIST = 'LIST';
 export const ADD = 'ADD';
 export const DEL = 'DEL';
 export const REQUEST = 'REQUEST';
-export const REQUEST_DONE = 'REQUEST_DONE';
+export const REQUEST_STATUS = 'REQUEST_STATUS';
 
 export const DEFAULT_DATA = [{
   id: 0,

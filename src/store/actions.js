@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch';
-import { ADD, DEL, LIST, REQUEST, REQUEST_DONE } from './constant';
+import { ADD, DEL, LIST, REQUEST, REQUEST_STATUS } from './constant';
 
 export const add = item => dispatch => {
   console.log('item', item);
@@ -23,8 +23,16 @@ export const list = list => dispatch => {
   });
 }
 
-export const request = ({ service, params }) => dispatch => {
-  console.info('dispatch.......');
+export const request = ({ service, params }) => (dispatch, getState) => {
+  const { status } = getState().foo || {};
+  if (status === 'FETCHING') {
+    console.info('request status is now FETCHING');
+    return;
+  }
+  dispatch({
+    type: REQUEST_STATUS,
+    data: { data: {}, status: 'FETCHING' },
+  });
   return fetch(service, params)
     .then(res => {
       if (res.status >= 400) {
@@ -32,19 +40,23 @@ export const request = ({ service, params }) => dispatch => {
       }
       console.log(JSON.stringify(res));
       dispatch({
-        type: REQUEST_DONE,
-        data: res,
+        type: REQUEST_STATUS,
+        data: { data: res, status: 'SUCCESS' },
       });
-      return res;
     })
     .catch(err => {
       console.error(err);
+      // alert(err);
+      dispatch({
+        type: REQUEST_STATUS,
+        data: { data: err, status: 'FAIL' },
+      });
     });
 };
 
 export const requestDone = ({ data }) => {
   return {
-    type: REQUEST_DONE,
+    type: REQUEST_STATUS,
     data,
   }
 };

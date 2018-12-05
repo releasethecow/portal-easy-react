@@ -4,7 +4,7 @@ import { list, add, del, request } from '../../../store/actions';
 import './home.css';
 
 const Info = (props) => {
-  if (props.foo) {
+  if (props.foo.status !== 'FETCHING') {
     return (<div className="info">{JSON.stringify(props.foo)}</div>)
   } else {
     return (<div className="loading"></div>);
@@ -31,7 +31,7 @@ class Home extends Component {
         <ul className="smart-artiles" id="articleList">
           {props.list.map(function(item) {
             return <li key={item.id}>
-              <div className="point">+{item.hits}</div>
+              <div className="point">+{item.hits}<span className="redux-btn-del" onClick={() => props.del(item.id)}>Delete</span></div>
               <div className="card">
                 <h2><a href={item.url} target="_blank">{item.title}</a></h2>
                 <div>
@@ -45,9 +45,6 @@ class Home extends Component {
                     <li><a>+ Mark</a></li>
                     <li>
                       <span className="timeago">{item.summary}</span>
-                    </li>
-                    <li>
-                      <span className="redux-btn-del" onClick={() => props.del(item.id)}>Delete</span>
                     </li>
                   </ul>
                 </div>

@@ -1,5 +1,6 @@
 .pane {
   height: 100%;
+  width: 100%;
 }
 .pane-menu {
   height: 50px;
@@ -13,12 +14,14 @@
 .landscape {
   .pane-menu {
     display: inline-block;
+    vertical-align: top;
     height: 100%;
     width: 200px;
     overflow-y: hidden;
   }
   .pane-content {
     display: inline-block;
+    vertical-align: top;
     height: 100%;
     width: calc(100% - 200px);
     overflow-y: scroll;
