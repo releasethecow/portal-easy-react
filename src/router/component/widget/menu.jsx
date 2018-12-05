@@ -18,6 +18,9 @@ export default class Pane extends Component {
       current: e.key
     });
   }
+  componentDidMount() {
+    console.info('[componentDidMount] Menu', this.state);
+  }
   render() {
     const listLi = menuItems.map(item => {
       let className = 'menu-li';

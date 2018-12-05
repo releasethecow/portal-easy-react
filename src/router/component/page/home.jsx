@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { list, add, del } from '../../../store/actions';
+import { list, add, del, request } from '../../../store/actions';
 import './home.css';
 class Home extends Component {
 
   render() {
-    const { add, del, list } = this.props;
-    const id = list.length + 1;
+    const props = this.props;
+    const id = props.list.length + 1;
     const item = {
       id,
       title: `React + Redux + React-Router 单页面实现-${id}`,
@@ -18,9 +18,11 @@ class Home extends Component {
       <div className="container">
         <h1>React + Redux + React-Router</h1>
         <div className="loading"></div>
-        <div className="redux-btn-add" onClick={() => add(item)}>Add</div>
+        <div className="redux-btn-add" onClick={() => props.request({service: '//api.github.com/users/lquixada', params: {}})}>Request</div>
+        <br />
+        <div className="redux-btn-add" onClick={() => props.add(item)}>Add</div>
         <ul className="smart-artiles" id="articleList">
-          {list.map(function(item) {
+          {props.list.map(function(item) {
             return <li key={item.id}>
               <div className="point">+{item.hits}</div>
               <div className="card">
@@ -38,7 +40,7 @@ class Home extends Component {
                       <span className="timeago">{item.summary}</span>
                     </li>
                     <li>
-                      <span className="redux-btn-del" onClick={() => del(item.id)}>Delete</span>
+                      <span className="redux-btn-del" onClick={() => props.del(item.id)}>Delete</span>
                     </li>
                   </ul>
                 </div>
@@ -51,11 +53,27 @@ class Home extends Component {
   }
 }
 
-
 const mapStateToProps = state => {
   return {
     list: state.list
   };
 };
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatch,
+    request(data) {
+      return dispatch(request(data));
+    },
+    add(data) {
+      return dispatch(add(data));
+    },
+    del(data) {
+      return dispatch(del(data));
+    },
+  }
+};
 
-export default connect(mapStateToProps, { add, del })(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);

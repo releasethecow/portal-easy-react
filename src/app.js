@@ -8,6 +8,7 @@ import Routes from './router'
 import './app.scss';
 
 const App = () => {
+  // this.props.dispatch
   return EASY_ENV_IS_DEV ? <AppContainer><Routes /></AppContainer> : <Routes />;
 };
 

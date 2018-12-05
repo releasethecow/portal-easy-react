@@ -13,7 +13,9 @@ class App extends Component {
   constructor(props) {
     super(props);
   }
-
+  componentDidMount() {
+    console.info('[componentDidMount] router');
+  }
   render() {
     return <BrowserRouter>
     <Pane
