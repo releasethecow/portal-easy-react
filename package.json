@@ -26,12 +26,12 @@
     "easywebpack-react": "^4.0.0",
     "eslint": "^4.16.0",
     "eslint-config-eslint": "^4.0.0",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react": "^7.11.1",
     "history": "^4.7.2",
     "imagemin-webpack-plugin": "^2.0.0",
     "node-sass": "^4.10.0",
-    "raw-loader": "^0.5.1",
     "postcss-plugin-px2rem": "^0.8.0",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^7.1.0"
   },
   "engines": {

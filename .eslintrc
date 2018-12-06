@@ -1,0 +1,36 @@
+{
+    "extends": [
+      "eslint-config-egg",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+    },
+    "rules": {
+      "valid-jsdoc": "off",
+      "eol-last": "off",
+      "strict": "off",
+      "no-alert": "off",
+      "no-irregular-whitespace": [
+        "error",
+        {
+          "skipComments": true
+        }
+      ],
+      "no-console": [ "error", { "allow": ["warn", "error", "info"] } ]
+    },
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true
+    },
+    "globals": {
+    },
+    "plugins": [
+      "react"
+    ],
+    "parser": "babel-eslint"
+  }
+  

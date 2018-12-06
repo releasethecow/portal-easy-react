@@ -1,8 +1,8 @@
 import fetch from 'cross-fetch';
-import { ADD, DEL, LIST, REQUEST, REQUEST_STATUS } from './constant';
+import { ADD, DEL, LIST, REQUEST_STATUS } from './constant';
 
 export const add = item => dispatch => {
-  console.log('item', item);
+  console.info('item', item);
   return dispatch({
     type: ADD,
     item
@@ -38,7 +38,7 @@ export const request = ({ service, params }) => (dispatch, getState) => {
       if (res.status >= 400) {
         throw new Error("Bad response from server");
       }
-      console.log(JSON.stringify(res));
+      console.info(JSON.stringify(res, null, 2));
       dispatch({
         type: REQUEST_STATUS,
         data: { data: res, status: 'SUCCESS' },

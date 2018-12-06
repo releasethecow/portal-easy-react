@@ -1,15 +1,16 @@
 'use strict';
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
+// import React, { Component } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import createStore from './store';
-import Routes from './router'
+import Routes from './router';
 import './app.scss';
 
 const App = () => {
   // this.props.dispatch
-  return EASY_ENV_IS_DEV ? <AppContainer><Routes /></AppContainer> : <Routes />;
+  return EASY_ENV_IS_DEV ? <AppContainer><Routes /></AppContainer> : <Routes />; // eslint-disable-line
 };
 
 const Entry = () => (<div className="root">
@@ -21,6 +22,6 @@ const Entry = () => (<div className="root">
 
 ReactDOM.render(<Entry />, document.getElementById('app'));
 
-if (EASY_ENV_IS_DEV && module.hot) {
+if (EASY_ENV_IS_DEV && module.hot) { // eslint-disable-line
   module.hot.accept();
 }
