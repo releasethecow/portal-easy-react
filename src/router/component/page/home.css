@@ -123,11 +123,12 @@
   height: 100px;
   background-image: url(../../../asset/images/loading.gif);
   background-size: 100px 100px;
+  margin-bottom: 10px;
 }
 .info {
-  border: #aaa 1px solid;
   padding: 10px;
-  width: 100%;
-  height: 100px;
+  height: 80px;
   overflow-y: scroll;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
 }

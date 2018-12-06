@@ -1,4 +1,4 @@
-import { LIST, ADD, DEL, REQUEST, REQUEST_STATUS } from './constant';
+import { LIST, ADD, DEL, REQUEST_STATUS } from './constant';
 
 export default function update(state, action) {
   const newState = Object.assign({}, state);
